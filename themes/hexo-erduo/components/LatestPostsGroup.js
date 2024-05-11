@@ -29,7 +29,6 @@ const LatestPostsGroup = ({ latestPosts, siteInfo }) => {
             </div>
         </div>
         {latestPosts
-        .sort((a, b) => b.publishDate - a.publishDate) // 按时间戳降序排序
         .map(post => {
           const headerImage = post?.pageCoverThumbnail ? post.pageCoverThumbnail : siteInfo?.pageCover
           const url = checkContainHttp(post.slug) ? sliceUrlFromHttp(post.slug) : `${siteConfig('SUB_PATH', '')}/${post.slug}`
