@@ -29,7 +29,7 @@ const TianLiGPT = () => {
       return
     }
     await loadExternalResource(tianliCss, 'css')
-    window.tianliGPT_Name = "erduoya";
+    window.tianliGPT_Name = 'erduoya';
     window.tianliGPT_postSelector = '#notion-article';
     window.tianliGPT_key = tianliKey;
 
