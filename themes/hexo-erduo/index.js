@@ -32,7 +32,6 @@ import { Style } from './style'
 import replaceSearchResult from '@/components/Mark'
 import { siteConfig } from '@/lib/config'
 import dynamic from 'next/dynamic'
-import BlogMemos from './components/BlogMemos'
 
 const AlgoliaSearchModal = dynamic(() => import('@/components/AlgoliaSearchModal'), { ssr: false })
 
@@ -224,32 +223,30 @@ const LayoutArchive = (props) => {
  * @returns
  */
 const LayoutMemos = (props) => {
-    const memoPageInfo = {
-        id: "9ecc78643def47bcvabeg5fn26304679",
-        type: "Memos",
-        title: "我的说说"
-    };
-    return  (
-    <div className="w-full lg:hover:shadow rounded-md lg:rounded-md lg:px-2 lg:py-4 article bg-white">
-        {/* 去掉加密的Lock部分判断 */}
-        <div id="article-wrapper" className="overflow-x-auto flex-grow mx-auto md:w-full px-3 font-serif">
-            <article itemScope itemType="https://schema.org/Movie" className="subpixel-antialiased overflow-y-hidden overflow-x-hidden" >
-                {/* Notion文章主体 */}
-                <section className='justify-center mx-auto max-w-2xl lg:max-w-full'>
-                    <BlogMemos {...props}/>
-                </section>
-            </article>
-            {/* 移除了分享模块，如果需要可以保留，将 LayoutSlug的对应部分拷贝过来 */}
-            <div className='pt-4 border-dashed'></div>
-            {/* 评论互动 */}
-            <div className="duration-200 overflow-x-auto px-3">
-                <Comment frontMatter={memoPageInfo} />
-            </div>
-        </div>
-    </div>)
+  const memoPageInfo = {
+      id: "9ecc78643def47bcvabeg5fn26304679",
+      type: "Memos",
+      title: "我的说说"
+  };
+  return  (
+  <div className="w-full lg:hover:shadow rounded-md lg:rounded-md lg:px-2 lg:py-4 article bg-white">
+      {/* 去掉加密的Lock部分判断 */}
+      <div id="article-wrapper" className="overflow-x-auto flex-grow mx-auto md:w-full px-3 font-serif">
+          <article itemScope itemType="https://schema.org/Movie" className="subpixel-antialiased overflow-y-hidden overflow-x-hidden" >
+              {/* Notion文章主体 */}
+              <section className='justify-center mx-auto max-w-2xl lg:max-w-full'>
+                  <BlogMemos {...props}/>
+              </section>
+          </article>
+          {/* 移除了分享模块，如果需要可以保留，将 LayoutSlug的对应部分拷贝过来 */}
+          <div className='pt-4 border-dashed'></div>
+          {/* 评论互动 */}
+          <div className="duration-200 overflow-x-auto px-3">
+              <Comment frontMatter={memoPageInfo} />
+          </div>
+      </div>
+  </div>)
 }
-
-
 /**
  * 文章详情
  * @param {*} props
@@ -405,7 +402,7 @@ export {
   LayoutIndex,
   LayoutSearch,
   LayoutArchive,
-  LayoutMemos, //增加LayoutMemos组件Export
+  LayoutMemos,   //增加LayoutMemos组件Export
   LayoutSlug,
   Layout404,
   LayoutCategoryIndex,
