@@ -17,7 +17,7 @@ const BlogMemos = () => {
         ])
             .then(() => {
                 // 保证moment.js加载完成后再加载moment.twitter.js
-                loadExternalResource('/js/moment.twitter.js', 'js');
+                return loadExternalResource('/js/moment.twitter.js', 'js');
             })
             .then(() => {
                 setResourcesLoaded(true); // 设置资源加载完成的状态
