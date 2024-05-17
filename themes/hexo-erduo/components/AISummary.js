@@ -68,7 +68,7 @@ const AISummary = ({post}) => {
                     </svg>
                 </i>
                 <div className="font-bold ml-2 leading-[1]">AI摘要</div>
-                <div id="AI-tag" className="text-xs bg-ai-title text-ai-title-text font-bold rounded p-1 flex items-center justify-center transition-all duration-300 absolute right-2">chengeGPT</div>
+                <div id="AI-tag" className="text-xs bg-ai-title text-ai-title-text font-bold rounded p-1 flex items-center justify-center transition-all duration-300 absolute right-2">erduoyaGPT</div>
             </div>
             <div id="AI-Summary" className="block mt-3 px-3 py-2 bg-ai-card-bg rounded-lg border-ai-card text-[15px] leading-7 text-hexo-front">
                 <TypewriterEffect text={summary} />
