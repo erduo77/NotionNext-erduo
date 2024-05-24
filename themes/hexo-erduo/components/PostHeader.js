@@ -5,6 +5,7 @@ import NotionIcon from '@/components/NotionIcon'
 import LazyImage from '@/components/LazyImage'
 import { formatDateFmt } from '@/lib/formatDate'
 import { siteConfig } from '@/lib/config'
+import WordCount from '@/components/WordCount'
 
 export default function PostHeader({ post, siteInfo }) {
   const { locale, fullWidth } = useGlobal()
@@ -46,18 +47,19 @@ export default function PostHeader({ post, siteInfo }) {
           <section className="flex-wrap shadow-text-md flex text-sm justify-center mt-4 text-white dark:text-gray-400 font-light leading-8">
 
             <div className='flex justify-center dark:text-gray-200 text-opacity-70'>
-              {post?.type !== 'Page' && (
-                <>
-                  <Link
-                    href={`/archive#${formatDateFmt(post?.publishDate, 'yyyy-MM')}`}
-                    passHref
-                    className="pl-1 mr-2 cursor-pointer hover:underline">
+              <div className='mr-2'><WordCount /></div>
+                {post?.type !== 'Page' && (
+                  <>
+                    <Link
+                      href={`/archive#${formatDateFmt(post?.publishDate, 'yyyy-MM')}`}
+                      passHref
+                      className="pl-1 mr-2 cursor-pointer hover:underline">
 
-                    {locale.COMMON.POST_TIME}: {post?.publishDay}
+                      {locale.COMMON.POST_TIME}: {post?.publishDay}
 
-                  </Link>
-                </>
-              )}
+                    </Link>
+                  </>
+                )}
               <div className="pl-1 mr-2">
                 {locale.COMMON.LAST_EDITED_TIME}: {post.lastEditedDay}
               </div>
